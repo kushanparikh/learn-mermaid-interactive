@@ -843,10 +843,6 @@ flowchart TD
                             <strong>5. Conditions (Alt/Else)</strong><br>
                             Branching logic
                         </li>
-                        <li class="example-item" data-type="sequence" data-example="complex">
-                            <strong>6. Login System</strong><br>
-                            Real-world example
-                        </li>
                     </ul>
 
                     <div class="tip-box">
@@ -1316,10 +1312,6 @@ stateDiagram-v2
                         <li class="example-item" data-type="erd" data-example="ecommerce">
                             <strong>5. E-commerce Database</strong><br>
                             Real-world schema
-                        </li>
-                        <li class="example-item" data-type="erd" data-example="school">
-                            <strong>6. School System</strong><br>
-                            Students, courses, teachers
                         </li>
                     </ul>
 
@@ -2805,7 +2797,7 @@ journey
             alt: `sequenceDiagram
     participant U as User
     participant S as System
-    
+
     U->>S: Login request
     alt Valid credentials
         S-->>U: Success
@@ -2813,31 +2805,7 @@ journey
     else Invalid credentials
         S-->>U: Error message
         S->>S: Log failed attempt
-    end`,
-
-            complex: `sequenceDiagram
-    participant U as User
-    participant F as Frontend
-    participant A as Auth Service
-    participant D as Database
-    
-    U->>F: Enter credentials
-    F->>A: Validate login
-    activate A
-    A->>D: Check user
-    activate D
-    D-->>A: User data
-    deactivate D
-    
-    alt Valid user
-        A->>A: Generate token
-        A-->>F: Success + token
-        F-->>U: Redirect to dashboard
-    else Invalid user
-        A-->>F: Error
-        F-->>U: Show error message
-    end
-    deactivate A`
+    end`
         };
 
         // Class Diagram Examples
@@ -3070,14 +3038,14 @@ journey
         string email
         string address
     }
-    
+
     ORDER {
         int id PK
         int customer_id FK
         date order_date
         decimal total
     }
-    
+
     ORDER_ITEM {
         int id PK
         int order_id FK
@@ -3085,49 +3053,17 @@ journey
         int quantity
         decimal price
     }
-    
+
     PRODUCT {
         int id PK
         string name
         decimal price
         int stock
     }
-    
+
     CUSTOMER ||--o{ ORDER : places
     ORDER ||--o{ ORDER_ITEM : contains
-    PRODUCT ||--o{ ORDER_ITEM : includes`,
-
-            school: `erDiagram
-    STUDENT {
-        int id PK
-        string name
-        string email
-        date enrollment_date
-    }
-    
-    TEACHER {
-        int id PK
-        string name
-        string department
-    }
-    
-    COURSE {
-        int id PK
-        string name
-        int credits
-        int teacher_id FK
-    }
-    
-    ENROLLMENT {
-        int student_id FK
-        int course_id FK
-        string grade
-        date semester
-    }
-    
-    TEACHER ||--o{ COURSE : teaches
-    STUDENT ||--o{ ENROLLMENT : enrolls
-    COURSE ||--o{ ENROLLMENT : has`
+    PRODUCT ||--o{ ORDER_ITEM : includes`
         };
 
         // Gantt Chart Examples
