@@ -555,8 +555,9 @@
                         <tr>
                             <td style="padding: 12px; border: 1px solid #ddd;">
                                 <a href="#requirement" onclick="showLearningTool('requirement')" style="color: #667eea; text-decoration: none; font-weight: bold; cursor: pointer;">Requirement Diagram →</a>
+                                <span style="color: #ff9800; font-size: 0.85em; margin-left: 5px;">⚠️ Deprecated</span>
                             </td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">Requirements and their relationships</td>
+                            <td style="padding: 12px; border: 1px solid #ddd;">Requirements and their relationships <em style="color: #666;">(Limited support in Mermaid v10+)</em></td>
                         </tr>
                         <tr style="background: #f8f9ff;">
                             <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;" rowspan="2">Data & Analysis</td>
@@ -1628,6 +1629,10 @@ timeline
             <div class="tool-header">
                 <h2>📋 Requirement Diagram Mastery</h2>
                 <button class="close-btn" onclick="hideLearningTool()">✕ Close</button>
+            </div>
+
+            <div style="background: #fff3cd; border-left: 4px solid #ff9800; padding: 15px; margin: 20px; border-radius: 8px;">
+                <strong>⚠️ Important Note:</strong> Requirement diagrams are <strong>deprecated in Mermaid.js v10+</strong> and may not render correctly. This diagram type was experimental and has been removed from active support. The syntax examples are provided for reference and legacy projects only. Consider using <strong>Class Diagrams</strong> or <strong>Flowcharts</strong> for requirements modeling instead.
             </div>
 
             <div class="content-grid">
