@@ -6,6 +6,19 @@
 
 ---
 
+## 🎉 What's New
+
+**Recent Updates (December 2025):**
+- ✨ **Loading States** - Added smooth loading spinners and fade-in animations for better user experience
+- 🐛 **Bug Fixes** - Fixed stuck loading symbol issue on page load
+- 🔢 **Consistency** - Fixed example numbering across all diagram types
+- ⚠️ **Deprecation Notices** - Added warnings for deprecated diagram features
+- 🗺️ **Roadmap** - Published development roadmap with planned features
+
+See [ROADMAP.md](ROADMAP.md) for upcoming features and planned enhancements.
+
+---
+
 ## 🌟 Features
 
 ### 🎯 Contradiction-Based Learning
@@ -48,7 +61,8 @@ Each chart type includes:
 - **Quick Reference Tables** - Syntax and features at a glance
 - **5 Progressive Examples** - From basic to real-world scenarios (70 examples total!)
 - **Live Code Editor** - Practice and experiment in real-time
-- **Instant Preview** - See your diagrams render immediately
+- **Instant Preview** - See your diagrams render immediately with smooth loading animations
+- **Visual Feedback** - Loading spinners and fade-in effects for better UX
 - **Learning Tips** - Best practices and use cases
 
 ---
@@ -140,6 +154,32 @@ Rather than choosing one approach, the tool lets you dynamically balance both, c
 
 ---
 
+## 📋 Version History
+
+### v1.0.3 (December 2025)
+- 🐛 Fixed stuck loading symbol on page load
+- ✨ Improved visual feedback with proper animation timing
+
+### v1.0.2 (December 2025)
+- ✨ Added loading states for all diagram types
+- 💫 Implemented smooth fade-in animations for rendered diagrams
+- 🎨 Added loading spinner with "Loading diagram..." text
+- ⚡ Enhanced user experience on slow connections
+
+### v1.0.1 (December 2025)
+- 🔢 Fixed example numbering consistency across all diagram types
+- ⚠️ Added deprecation warnings for Requirement Diagram
+- 🗺️ Published project roadmap
+
+### v1.0.0 (December 2025)
+- 🎉 Initial release
+- ✅ All 14 Mermaid diagram types implemented
+- 📚 70+ progressive examples
+- 🎯 Contradiction-based learning slider
+- 🌐 Deployed on GitHub Pages
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Here are some ways you can help:
@@ -149,6 +189,8 @@ Contributions are welcome! Here are some ways you can help:
 - 📚 **Add examples** - Submit PRs with new diagram examples
 - 🌍 **Improve documentation** - Help make instructions clearer
 - 🎨 **Design improvements** - Enhance the UI/UX
+
+Check out our [ROADMAP.md](ROADMAP.md) for planned features and upcoming improvements.
 
 ---
 
