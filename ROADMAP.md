@@ -122,19 +122,16 @@ Make this the best interactive learning tool for Mermaid diagrams, helping thous
 ## 🐛 Known Issues
 
 ### High Priority
-1. Requirement Diagram examples not rendering correctly
-2. No loading state when diagrams are rendering
-3. Some examples have 6 items instead of 5
 
 ### Medium Priority
-4. Syntax highlighting in code editors
-5. Error messages could be more helpful
-6. Long diagram code causes editor to scroll
+1. Syntax highlighting in code editors
+2. Error messages could be more helpful
+3. Long diagram code causes editor to scroll
 
 ### Low Priority
-7. Some diagram types could use more examples
-8. Contradiction slider could have more granular positions
-9. Mobile keyboard covers input on small screens
+4. Some diagram types could use more examples
+5. Contradiction slider could have more granular positions
+6. Mobile keyboard covers input on small screens
 
 ---
 
