@@ -2581,22 +2581,9 @@ journey
     </div>
 
     <script>
-        // Show loading states for all diagrams on page load
+        // Initialize Mermaid on page load
         document.addEventListener('DOMContentLoaded', () => {
-            const allPreviews = document.querySelectorAll('.diagram-preview');
-            allPreviews.forEach(preview => {
-                preview.classList.add('loading');
-            });
-
-            // Initialize Mermaid
             mermaid.initialize({ startOnLoad: true, theme: 'default' });
-
-            // Remove loading states after diagrams render
-            setTimeout(() => {
-                allPreviews.forEach(preview => {
-                    preview.classList.remove('loading');
-                });
-            }, 1500);
         });
 
         // Contradiction Slider Logic
