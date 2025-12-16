@@ -19,8 +19,8 @@ Make this the best interactive learning tool for Mermaid diagrams, helping thous
 ### v1.1 - Polish & Accessibility (Q1 2025)
 **Goal:** Fix known issues and improve accessibility
 
-- [ ] Fix Requirement Diagram rendering issues
-- [ ] Add loading states for diagram rendering
+- [X] Fix Requirement Diagram rendering issues
+- [X] Add loading states for diagram rendering
 - [ ] Improve mobile responsiveness for tablets
 - [ ] Add keyboard navigation support (Tab, Enter, Esc)
 - [ ] Add ARIA labels for screen readers
