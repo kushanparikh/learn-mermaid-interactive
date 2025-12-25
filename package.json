@@ -1,0 +1,29 @@
+{
+  "name": "learn-mermaid-interactive",
+  "type": "module",
+  "version": "1.1.0",
+  "description": "An interactive learning tool for mastering all 14 Mermaid diagram types",
+  "author": "Kushan Parikh",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.16.6",
+    "mermaid": "^11.12.2",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwindcss": "^4.1.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kushanparikh/learn-mermaid-interactive"
+  },
+  "keywords": ["mermaid", "diagrams", "learning", "interactive"]
+}
