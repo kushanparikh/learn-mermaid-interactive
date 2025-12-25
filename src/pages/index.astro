@@ -1,0 +1,213 @@
+---
+/**
+ * Homepage - Learn Mermaid Interactive
+ *
+ * This is the main landing page for the application.
+ * Currently displays a minimal working version with:
+ * - Page header
+ * - Flowchart diagram information
+ * - Placeholder for future components (slider, table, editor)
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllDiagrams, getDiagramCount, getTotalExampleCount } from '../data/diagrams';
+
+// Get all diagram data
+const diagrams = getAllDiagrams();
+const diagramCount = getDiagramCount();
+const exampleCount = getTotalExampleCount();
+
+// Get flowchart for initial display
+const flowchart = diagrams.find(d => d.id === 'flowchart');
+---
+
+<BaseLayout>
+  <!-- Main Container -->
+  <div class="min-h-screen">
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+      <div class="container-custom">
+        <h1 class="text-5xl font-bold mb-4">Learn Mermaid Interactive</h1>
+        <p class="text-xl text-blue-100 mb-6">
+          Master diagram syntax with interactive examples and live code editors
+        </p>
+        <div class="flex gap-6 text-lg">
+          <div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+            <span class="font-bold">{diagramCount}</span> Diagram Types
+          </div>
+          <div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+            <span class="font-bold">{exampleCount}</span> Examples
+          </div>
+          <div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+            <span class="font-bold">100%</span> Interactive
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container-custom py-12">
+
+      <!-- Introduction -->
+      <section class="mb-12">
+        <div class="card">
+          <h2 class="card-header">Welcome to Learn Mermaid Interactive</h2>
+          <div class="card-body space-y-4">
+            <p>
+              This interactive learning platform helps you master Mermaid.js diagram syntax
+              through hands-on examples, live code editors, and instant visual feedback.
+            </p>
+            <p>
+              Currently in <strong>Phase 2</strong> of development. We have successfully implemented:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>✅ Project structure with Astro, TypeScript, and Tailwind CSS</li>
+              <li>✅ Type-safe data layer with {diagramCount} diagram type(s)</li>
+              <li>✅ {exampleCount} interactive examples</li>
+              <li>✅ Responsive base layout with Mermaid.js integration</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flowchart Preview -->
+      {flowchart && (
+        <section class="mb-12">
+          <div class="card">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-4xl">{flowchart.icon}</span>
+              <div>
+                <h2 class="text-2xl font-bold text-gray-800">{flowchart.name}</h2>
+                <p class="text-gray-600">{flowchart.description}</p>
+              </div>
+            </div>
+
+            <!-- Diagram Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <div class="text-3xl font-bold text-blue-600">{flowchart.examples.length}</div>
+                <div class="text-sm text-gray-600">Examples</div>
+              </div>
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <div class="text-3xl font-bold text-purple-600">{flowchart.syntax.length}</div>
+                <div class="text-sm text-gray-600">Syntax Items</div>
+              </div>
+              <div class="bg-green-50 p-4 rounded-lg">
+                <div class="text-3xl font-bold text-green-600 capitalize">{flowchart.status}</div>
+                <div class="text-sm text-gray-600">Status</div>
+              </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases</h3>
+              <div class="flex flex-wrap gap-2">
+                {flowchart.useCases?.map(useCase => (
+                  <span class="badge-blue">{useCase}</span>
+                ))}
+              </div>
+            </div>
+
+            <!-- First Example Preview -->
+            {flowchart.examples[0] && (
+              <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Example: {flowchart.examples[0].title}</h3>
+                <p class="text-gray-600 mb-4">{flowchart.examples[0].description}</p>
+
+                <!-- Code Display -->
+                <div class="bg-gray-900 text-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
+                  <pre class="text-sm font-mono">{flowchart.examples[0].code}</pre>
+                </div>
+
+                <!-- Mermaid Diagram Preview -->
+                <div class="mermaid-container">
+                  <div class="mermaid">
+                    {flowchart.examples[0].code}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <!-- Tips -->
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800 mb-3">Tips for Success</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-700">
+                {flowchart.tips?.map(tip => (
+                  <li>{tip}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Coming Soon Sections -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Coming in Phase 3 & 4</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Placeholder: Contraction Slider -->
+          <div class="card bg-gray-50 border-2 border-dashed border-gray-300">
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">🎚️ Learning Mode Slider</h3>
+            <p class="text-gray-600 text-sm">
+              Adjust how many examples you see at once. From deep focus (1-2 examples)
+              to broad exploration (all examples).
+            </p>
+            <div class="mt-4 text-xs text-gray-500">Phase 4 Component</div>
+          </div>
+
+          <!-- Placeholder: Diagram Table -->
+          <div class="card bg-gray-50 border-2 border-dashed border-gray-300">
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">📊 Diagram Types Table</h3>
+            <p class="text-gray-600 text-sm">
+              Browse all 14+ diagram types organized by category (Flow, Structure, Timeline, Other).
+            </p>
+            <div class="mt-4 text-xs text-gray-500">Phase 4 Component</div>
+          </div>
+
+          <!-- Placeholder: Interactive Editor -->
+          <div class="card bg-gray-50 border-2 border-dashed border-gray-300">
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">✏️ Interactive Editor</h3>
+            <p class="text-gray-600 text-sm">
+              Live code editor with instant preview. Write Mermaid code and see the
+              diagram render in real-time.
+            </p>
+            <div class="mt-4 text-xs text-gray-500">Phase 4 Component (React)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Documentation Link -->
+      <section class="text-center py-8">
+        <div class="card bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200">
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Ready to Learn More?</h3>
+          <p class="text-gray-700 mb-4">
+            Explore the official Mermaid.js documentation for advanced features and syntax.
+          </p>
+          <a
+            href="https://mermaid.js.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary inline-block"
+          >
+            Visit Mermaid.js Docs
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Additional page-specific styles */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+
+  .space-y-2 > * + * {
+    margin-top: 0.5rem;
+  }
+</style>
